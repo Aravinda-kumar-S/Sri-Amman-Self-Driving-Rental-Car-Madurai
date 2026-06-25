@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+
+:root {
+  --background: #080808;
+  --foreground: #ffffff;
+  --gold: #D4AF37;
+  --gold-glow: rgba(212, 175, 55, 0.15);
+  --red: #C62828;
+  --red-glow: rgba(198, 40, 40, 0.25);
+  --black: #111111;
+  --dark-gray: #1a1a1a;
+  
+  --font-poppins: 'Poppins', sans-serif;
+  --font-montserrat: 'Montserrat', sans-serif;
+  --font-inter: 'Inter', sans-serif;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-gold: var(--gold);
+  --color-red: var(--red);
+  --color-black: var(--black);
+  
+  --font-sans: var(--font-inter);
+  --font-poppins: var(--font-poppins);
+  --font-montserrat: var(--font-montserrat);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Glassmorphism Cards */
+.glass-card {
+  background: rgba(17, 17, 17, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.glass-card-gold {
+  background: rgba(17, 17, 17, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(212, 175, 55, 0.05);
+}
+
+.glass-card-red {
+  background: rgba(17, 17, 17, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(198, 40, 40, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(198, 40, 40, 0.08);
+}
+
+/* Gold shine text & border effects */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #FFF 10%, #D4AF37 50%, #F3E5AB 80%, #D4AF37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.red-gradient-text {
+  background: linear-gradient(135deg, #FFF 10%, #C62828 60%, #E53935 80%, #C62828 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Custom animated highway lines */
+.highway-bg {
+  background-image: 
+    linear-gradient(rgba(8, 8, 8, 0.8), rgba(8, 8, 8, 0.1)),
+    linear-gradient(90deg, rgba(212, 175, 55, 0.15) 1px, transparent 1px),
+    linear-gradient(rgba(212, 175, 55, 0.15) 1px, transparent 1px);
+  background-size: 100% 100%, 60px 60px, 60px 60px;
+  background-position: center;
+  transform: perspective(500px) rotateX(60deg);
+  transform-origin: top;
+  animation: road-scroll 10s linear infinite;
+}
+
+@keyframes road-scroll {
+  0% {
+    background-position: 0 0, 0 0, 0 0;
+  }
+  100% {
+    background-position: 0 0, 0 600px, 0 600px;
+  }
+}
+
+/* Glowing particles */
+.glow-effect {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--gold-glow) 0%, transparent 70%);
+  filter: blur(40px);
+  pointer-events: none;
+}
+
+.glow-red {
+  background: radial-gradient(circle, var(--red-glow) 0%, transparent 70%);
+}
+
+/* Hide scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #080808;
+}
+::-webkit-scrollbar-thumb {
+  background: #D4AF37;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C62828;
+}
+
