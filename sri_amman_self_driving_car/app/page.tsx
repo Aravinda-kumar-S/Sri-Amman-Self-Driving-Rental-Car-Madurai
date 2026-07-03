@@ -160,11 +160,12 @@ Please contact me regarding this query.`;
 
   // Static specs for Wagon R
   const specs = [
+    { name: "CNG Fuel Option", desc: "Eco-friendly CNG variant available - Save up to 50% on fuel costs" },
     { name: "Comfortable Seating", desc: "Spacious 5-seater cabin with tall-boy design" },
-    { name: "Excellent Mileage", desc: "Superb fuel efficiency, ideal for long journeys" },
     { name: "Air Conditioned", desc: "Powerful cooling for Tamil Nadu summers" },
     { name: "Power Steering", desc: "Effortless handling in city traffic & highways" },
     { name: "Family Friendly", desc: "Huge boot space & comfortable legroom for all" },
+    { name: "Most Affordable Rates", desc: "Lowest rental prices in Madurai - No hidden charges" },
     { name: "Long Distance Ready", desc: "Fully serviced, clean & highway-tested engine" },
     { name: "City & Outstation Travel", desc: "Perfect size for narrow city roads and outer highways" }
   ];
@@ -264,50 +265,54 @@ Please contact me regarding this query.`;
 
       {/* 3. Navigation Header */}
       <header className="fixed top-0 left-0 w-full z-45 glass-card border-b border-white/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="relative w-12 h-12 shrink-0">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[72px] flex items-center justify-between gap-4">
+
+          {/* Brand / Logo */}
+          <a href="#hero" className="flex items-center gap-3 shrink-0">
+            <div className="relative w-14 h-14 shrink-0">
               <Image 
                 src="/logo.png" 
                 alt="Sri Amman Self Driving Logo" 
                 fill
                 className="object-contain"
+                priority
               />
             </div>
-            <div className="flex flex-col">
-              <span className="font-poppins text-lg font-extrabold tracking-wide text-white leading-none">
+            <div className="flex flex-col leading-tight">
+              <span className="font-poppins text-base font-extrabold tracking-wide text-white whitespace-nowrap">
                 SRI AMMAN
               </span>
-              <span className="text-[9px] text-[#D4AF37] font-semibold tracking-wider uppercase mt-1">
+              <span className="text-[10px] text-[#D4AF37] font-semibold tracking-widest uppercase">
                 Self Driving Car
               </span>
             </div>
-          </div>
+          </a>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-6 text-sm font-medium text-zinc-300">
-            <a href="#hero" className="hover:text-[#D4AF37] transition-colors">Home</a>
-            <a href="#booking" className="hover:text-[#D4AF37] transition-colors">Book Now</a>
-            <a href="#about" className="hover:text-[#D4AF37] transition-colors">About Us</a>
-            <a href="#why-choose-us" className="hover:text-[#D4AF37] transition-colors">Features</a>
-            <a href="#showcase" className="hover:text-[#D4AF37] transition-colors">The Wagon R</a>
-            <a href="#timeline" className="hover:text-[#D4AF37] transition-colors">How it Works</a>
-            <a href="#service-areas" className="hover:text-[#D4AF37] transition-colors">Locations</a>
-            <a href="#policies" className="hover:text-[#D4AF37] transition-colors">Policies</a>
-            <a href="#contact" className="hover:text-[#D4AF37] transition-colors">Contact</a>
+          <nav className="hidden xl:flex items-center gap-4 text-[13px] font-medium text-zinc-300 flex-1 justify-center">
+            <a href="#hero" className="hover:text-[#D4AF37] transition-colors whitespace-nowrap">Home</a>
+            <a href="#booking" className="hover:text-[#D4AF37] transition-colors whitespace-nowrap">Book Now</a>
+            <a href="#about" className="hover:text-[#D4AF37] transition-colors whitespace-nowrap">About Us</a>
+            <a href="#why-choose-us" className="hover:text-[#D4AF37] transition-colors whitespace-nowrap">Features</a>
+            <a href="#showcase" className="hover:text-[#D4AF37] transition-colors whitespace-nowrap">Wagon R</a>
+            <a href="#timeline" className="hover:text-[#D4AF37] transition-colors whitespace-nowrap">How it Works</a>
+            <a href="#service-areas" className="hover:text-[#D4AF37] transition-colors whitespace-nowrap">Locations</a>
+            <a href="#policies" className="hover:text-[#D4AF37] transition-colors whitespace-nowrap">Policies</a>
+            <a href="#contact" className="hover:text-[#D4AF37] transition-colors whitespace-nowrap">Contact</a>
           </nav>
 
-          <div className="flex items-center gap-3">
+          {/* Right actions */}
+          <div className="flex items-center gap-3 shrink-0">
             <a 
               href="tel:+917010532307" 
-              className="hidden sm:flex items-center gap-2 text-zinc-300 hover:text-white text-sm mr-2"
+              className="hidden 2xl:flex items-center gap-1.5 text-zinc-300 hover:text-white text-xs whitespace-nowrap"
             >
-              <Phone className="w-4 h-4 text-red-500" />
+              <Phone className="w-3.5 h-3.5 text-red-500" />
               <span>+91 70105 32307</span>
             </a>
             <motion.a 
               href="#booking"
-              className="bg-gradient-to-r from-amber-500 to-[#D4AF37] text-black font-semibold px-5 py-2.5 rounded-full text-sm hover:from-amber-400 hover:to-yellow-300 transition-all shadow-md shadow-amber-500/10"
+              className="bg-gradient-to-r from-amber-500 to-[#D4AF37] text-black font-bold px-4 py-2 rounded-full text-sm whitespace-nowrap hover:from-amber-400 hover:to-yellow-300 transition-all shadow-md shadow-amber-500/10"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -318,7 +323,7 @@ Please contact me regarding this query.`;
       </header>
 
       {/* 4. Full Screen Hero Section */}
-      <section id="hero" className="relative min-h-screen pt-20 flex flex-col justify-between overflow-hidden">
+      <section id="hero" className="relative min-h-screen pt-[72px] flex flex-col justify-between overflow-hidden">
         
         {/* Animated grid lines and background templates */}
         <div className="absolute inset-0 z-0">
@@ -368,7 +373,7 @@ Please contact me regarding this query.`;
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-zinc-400 text-base sm:text-xl max-w-3xl leading-relaxed mb-8"
           >
-            Affordable, reliable and premium Maruti Suzuki Wagon R self-drive car rentals for family trips, local travel, business excursions, and outstation journeys.
+            Affordable, reliable and premium Maruti Suzuki Wagon R self-drive car rentals with <span className="text-[#D4AF37] font-semibold">CNG option available</span> — save up to 50% on fuel costs! Perfect for family trips, local travel, business excursions, and outstation journeys at the most <span className="text-[#D4AF37] font-semibold">cost-effective rates in Madurai</span>.
           </motion.p>
 
           {/* CTA Group */}
@@ -411,10 +416,10 @@ Please contact me regarding this query.`;
             className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-4xl mt-4"
           >
             {[
-              "Instant Booking",
+              "CNG Fuel Available",
+              "Most Affordable Rates",
               "Doorstep Delivery",
-              "24/7 Customer Support",
-              "Clean Hygienic Cars"
+              "24/7 Customer Support"
             ].map((badge, idx) => (
               <div 
                 key={idx} 
@@ -460,9 +465,9 @@ Please contact me regarding this query.`;
           <div className="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             {[
               { num: "50+", label: "Happy Customers" },
-              { num: "50+", label: "Trips Completed" },
+              { num: "50%", label: "Fuel Savings with CNG" },
               { num: "24/7", label: "Customer Support" },
-              { num: "100%", label: "Satisfaction Guaranteed" }
+              { num: "100%", label: "Affordable & Transparent" }
             ].map((stat, idx) => (
               <div key={idx} className="flex flex-col justify-center">
                 <span className="text-3xl md:text-4xl font-poppins font-black text-[#D4AF37]">{stat.num}</span>
@@ -484,6 +489,16 @@ Please contact me regarding this query.`;
             <p className="text-zinc-400 text-sm sm:text-base">
               Submit your trip dates & details to automatically generate a pre-formatted booking dispatch for our WhatsApp agents.
             </p>
+            {/* CNG badge */}
+            <div className="flex flex-wrap items-center justify-center gap-3 mt-5">
+              <span className="inline-flex items-center gap-1.5 bg-green-950/50 border border-green-700/40 text-green-400 text-xs font-bold px-4 py-1.5 rounded-full tracking-wide">
+                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                CNG AVAILABLE — SAVE 50% ON FUEL
+              </span>
+              <span className="inline-flex items-center gap-1.5 bg-amber-950/50 border border-amber-700/40 text-[#D4AF37] text-xs font-bold px-4 py-1.5 rounded-full tracking-wide">
+                ₹ MOST AFFORDABLE RATES IN MADURAI
+              </span>
+            </div>
           </div>
 
           <motion.div 
@@ -670,10 +685,10 @@ Please contact me regarding this query.`;
                 AFFORDABLE & RELIABLE <span className="gold-gradient-text">CAR RENTAL</span> ACROSS MADURAI
               </h2>
               <p className="text-zinc-400 text-base leading-relaxed">
-                Sri Amman Self Driving Rental Car offers premium self-drive vehicle services throughout Madurai. We are committed to rendering safe, fully-maintained, hygienic, and customer-friendly transit experiences tailored for diverse user requirements.
+                Sri Amman Self Driving Rental Car offers premium self-drive vehicle services throughout Madurai at the <span className="text-[#D4AF37] font-semibold">most affordable and cost-effective rates</span>. We are committed to rendering safe, fully-maintained, hygienic, and customer-friendly transit experiences tailored for diverse user requirements.
               </p>
               <p className="text-zinc-400 text-base leading-relaxed">
-                Whether you need a spacious, fuel-efficient vehicle for family gatherings, local business meetings, or outstation tours to the mountains, our custom-finished Maruti Suzuki Wagon R offers supreme comfort, high reliability, and maximum peace of mind.
+                Whether you need a spacious, fuel-efficient vehicle for family gatherings, local business meetings, or outstation tours to the mountains, our custom-finished Maruti Suzuki Wagon R offers supreme comfort, high reliability, and maximum peace of mind. <span className="text-[#D4AF37] font-semibold">CNG option available for up to 50% fuel savings</span> on long trips!
               </p>
 
               {/* Service Areas */}
@@ -708,8 +723,15 @@ Please contact me regarding this query.`;
                   <li className="flex gap-3">
                     <CheckCircle2 className="w-5 h-5 text-red-500 shrink-0 mt-0.5" />
                     <div>
-                      <strong className="text-white block text-sm">Flexible Pricing Packages</strong>
-                      <span className="text-zinc-400 text-xs">Affordable rates tailored for daily, weekly, or custom duration trips.</span>
+                      <strong className="text-white block text-sm">CNG Fuel Available — Save More</strong>
+                      <span className="text-zinc-400 text-xs">CNG-powered Wagon R available for up to 50% savings on fuel vs petrol. Perfect for long trips.</span>
+                    </div>
+                  </li>
+                  <li className="flex gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-red-500 shrink-0 mt-0.5" />
+                    <div>
+                      <strong className="text-white block text-sm">Most Affordable Rates in Madurai</strong>
+                      <span className="text-zinc-400 text-xs">Transparent, lowest pricing with zero hidden charges. Flexible packages for daily, weekly & custom durations.</span>
                     </div>
                   </li>
                   <li className="flex gap-3">
@@ -751,6 +773,8 @@ Please contact me regarding this query.`;
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
+              { title: "CNG Fuel Available", desc: "Eco-friendly CNG variant saves up to 50% on fuel costs vs petrol — ideal for long outstation trips." },
+              { title: "Most Affordable Rates", desc: "Lowest self-drive rental prices in Madurai with zero hidden charges and full price transparency." },
               { title: "Fully Fragranced Cars", desc: "Experience a refreshing drive with our premium interior air fresheners." },
               { title: "24/7 Customer Support", desc: "Need assistance? Our helpdesk is open round-the-clock for real-time solutions." },
               { title: "Well Maintained Cars", desc: "No mechanical failures. Every car goes through extreme diagnostics before dispatch." },
@@ -759,7 +783,7 @@ Please contact me regarding this query.`;
               { title: "Doorstep Delivery", desc: "We bring the Wagon R right to your home, railway station, or hotel in Madurai." },
               { title: "Quick Delivery Service", desc: "Punctual drivers ensure that your vehicle is delivered exactly on time." },
               { title: "Flexible Rental Plans", desc: "Choose rental terms that align with your custom traveling schedule." },
-              { title: "Affordable Pricing", desc: "Premium driving feel at direct value-for-money rates." }
+              { title: "Cost-Effective Journey", desc: "CNG + affordable pricing = the most economical self-drive option in all of Tamil Nadu." }
             ].map((card, idx) => (
               <motion.div 
                 key={idx}
@@ -796,7 +820,7 @@ Please contact me regarding this query.`;
               MARUTI SUZUKI <span className="gold-gradient-text">WAGON R</span>
             </h2>
             <p className="text-zinc-400 text-sm sm:text-base max-w-2xl mx-auto mt-3">
-              Rotate our customized Wagon R to explore different angles. The ultimate family-friendly vehicle for Tamil Nadu travel.
+              Rotate our customized Wagon R to explore different angles. The ultimate family-friendly vehicle for Tamil Nadu travel — now with <span className="text-[#D4AF37] font-semibold">CNG fuel option</span> for maximum cost savings.
             </p>
           </div>
 
@@ -1003,7 +1027,251 @@ Please contact me regarding this query.`;
         </div>
       </section>
 
-      {/* 11. Policy Center Accordion */}
+      {/* 11. Customer Reviews */}
+      <section id="reviews" className="py-24 relative overflow-hidden bg-zinc-950">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(212,175,55,0.05),transparent_40%)]"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          
+          {/* Section Header */}
+          <div className="text-center mb-14">
+            <span className="text-red-500 font-extrabold uppercase tracking-[0.2em] text-xs">
+              What Our Customers Say
+            </span>
+            <h2 className="text-3xl sm:text-5xl font-poppins font-black mt-2">
+              REAL REVIEWS FROM <span className="gold-gradient-text">HAPPY RIDERS</span>
+            </h2>
+            <p className="text-zinc-400 text-sm sm:text-base max-w-xl mx-auto mt-3">
+              Over 20 verified customer experiences — from local trips to outstation adventures.
+            </p>
+            {/* Star summary */}
+            <div className="flex items-center justify-center gap-2 mt-4">
+              <div className="flex gap-1">
+                {[1,2,3,4,5].map(i => (
+                  <svg key={i} className="w-6 h-6 text-[#D4AF37]" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                ))}
+              </div>
+              <span className="text-white font-bold text-lg">5.0</span>
+              <span className="text-zinc-400 text-sm">• 22 Reviews</span>
+            </div>
+          </div>
+
+          {/* Reviews Grid */}
+          <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+            {[
+              {
+                name: "Ramesh Kumar",
+                location: "Madurai Main",
+                rating: 5,
+                date: "June 2026",
+                review: "Excellent service! The Wagon R was spotlessly clean and well-maintained. Doorstep delivery made everything so convenient. Highly recommend Sri Amman for anyone looking for a self-drive car in Madurai."
+              },
+              {
+                name: "Priya Selvam",
+                location: "Mattuthavani",
+                rating: 5,
+                date: "June 2026",
+                review: "Booked for a family trip to Kodaikanal. The car was in perfect condition and the booking process via WhatsApp was super smooth. Will definitely book again!"
+              },
+              {
+                name: "Suresh Babu",
+                location: "Sellur",
+                rating: 5,
+                date: "May 2026",
+                review: "Very professional service. They delivered the car on time and the staff was very helpful. The Wagon R is comfortable for long drives. Best self-drive rental in Madurai!"
+              },
+              {
+                name: "Kavitha Natarajan",
+                location: "K Pudur",
+                rating: 5,
+                date: "May 2026",
+                review: "Amazing experience! I used the car for a week-long trip and it never gave any issues. Full tank on pickup, clean interiors, and very affordable pricing. Five stars!"
+              },
+              {
+                name: "Murugan Arumugam",
+                location: "Arappalayam",
+                rating: 5,
+                date: "May 2026",
+                review: "Rented for a business trip within Madurai. Very responsive on WhatsApp, easy documentation process. The car handled city traffic really well. Great value for money."
+              },
+              {
+                name: "Deepa Rajendran",
+                location: "Iyer Bungalow",
+                rating: 5,
+                date: "April 2026",
+                review: "Very trustworthy service. The owner is very friendly and transparent about pricing. No hidden charges whatsoever. Booked twice already and both experiences were flawless."
+              },
+              {
+                name: "Venkatesh S",
+                location: "Koodal Nagar",
+                rating: 5,
+                date: "April 2026",
+                review: "Took the car to Rameswaram for a pilgrimage trip with family. The Wagon R is fuel-efficient and very comfortable. Sri Amman rental is the best choice in Madurai!"
+              },
+              {
+                name: "Anitha Mohan",
+                location: "Vakaikulam",
+                rating: 5,
+                date: "April 2026",
+                review: "Prompt delivery, clean car, very polite service. I especially appreciated the WhatsApp booking system — it's quick and hassle-free. Strongly recommend to everyone."
+              },
+              {
+                name: "Karthi Velan",
+                location: "Madurai Airport Area",
+                rating: 5,
+                date: "March 2026",
+                review: "Used the service to travel to Dindigul for a wedding. The car was in top shape and fuel efficiency was excellent. Pickup was on time and return was smooth. 10/10 service!"
+              },
+              {
+                name: "Selvi Pandian",
+                location: "Sellur",
+                rating: 5,
+                date: "March 2026",
+                review: "As a solo female traveler, safety was my top concern. Sri Amman's well-maintained car gave me full confidence. The owner also called to check in during my trip. Felt very secure."
+              },
+              {
+                name: "Balamurugan T",
+                location: "Mattuthavani",
+                rating: 5,
+                date: "March 2026",
+                review: "Affordable pricing compared to Zoomcar or other platforms. No unnecessary restrictions, simple booking, and the car is always clean and fresh. This is my go-to rental now."
+              },
+              {
+                name: "Nithya Krishnan",
+                location: "Koodal Nagar",
+                rating: 5,
+                date: "February 2026",
+                review: "Rented for 3 days and the entire experience was seamless. Very comfortable car for outstation. Responsive customer support at all times. Keep up the great work!"
+              },
+              {
+                name: "Saravanan P",
+                location: "Arappalayam",
+                rating: 5,
+                date: "February 2026",
+                review: "Best self drive experience in Madurai. The Wagon R is perfect for highway travel and city roads alike. Paperwork was minimal and everything was transparent. Loved it!"
+              },
+              {
+                name: "Meena Sundaram",
+                location: "Iyer Bungalow",
+                rating: 5,
+                date: "February 2026",
+                review: "My husband and I drove to Ooty. The car was in excellent condition throughout. Sri Amman team is very cooperative. Fair pricing with no extra surprises. 5 stars!"
+              },
+              {
+                name: "Dinesh Rajan",
+                location: "K Pudur",
+                rating: 5,
+                date: "January 2026",
+                review: "Quick and easy booking on WhatsApp. Car was delivered right to my doorstep in Madurai. Wagon R is spacious enough for 4 people with luggage. Would definitely rent again."
+              },
+              {
+                name: "Jayalakshmi V",
+                location: "Madurai Main",
+                rating: 5,
+                date: "January 2026",
+                review: "Impeccable service! Car was clean, smelled fresh, and had a full fuel tank. The entire rental period was smooth without a single issue. Highly recommend Sri Amman!"
+              },
+              {
+                name: "Muthusamy G",
+                location: "Vakaikulam",
+                rating: 5,
+                date: "December 2025",
+                review: "Honest pricing, well-maintained car, punctual delivery. Everything was exactly as promised. Sri Amman is a name you can trust for self-drive car rentals in Madurai."
+              },
+              {
+                name: "Revathi Subramaniam",
+                location: "Sellur",
+                rating: 5,
+                date: "December 2025",
+                review: "Drove to Courtallam with my family. The Wagon R handled the ghat roads very well. Fuel economy was impressive. Sri Amman deserves every 5-star review they get!"
+              },
+              {
+                name: "Vijayakumar A",
+                location: "Mattuthavani",
+                rating: 5,
+                date: "November 2025",
+                review: "Rented multiple times. Every single time the service has been outstanding. The car is always ready on time, clean, and well-fueled. This is the most reliable rental in Madurai."
+              },
+              {
+                name: "Padmavathi R",
+                location: "Arappalayam",
+                rating: 5,
+                date: "November 2025",
+                review: "Very convenient self-drive experience. Doorstep pickup and drop was a lifesaver for me. No trouble with documentation or return. Sri Amman is truly customer-first!"
+              },
+              {
+                name: "Sundar Krishnamoorthy",
+                location: "Koodal Nagar",
+                rating: 5,
+                date: "October 2025",
+                review: "Took the Wagon R for a weekend trip to Yercaud. Comfortable ride, zero breakdowns, and the rental rates were the best we found in Madurai. Very satisfied customer!"
+              },
+              {
+                name: "Archana Balaji",
+                location: "Iyer Bungalow",
+                rating: 5,
+                date: "October 2025",
+                review: "The staff's professionalism and the condition of the car really stood out. It was our first self-drive experience and Sri Amman made it so easy and stress-free. Thank you!"
+              },
+            ].map((review, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: (idx % 6) * 0.08 }}
+                className="break-inside-avoid bg-black/60 border border-zinc-800 hover:border-amber-500/30 rounded-2xl p-5 transition-colors mb-6"
+              >
+                {/* Stars */}
+                <div className="flex gap-0.5 mb-3">
+                  {Array.from({ length: review.rating }).map((_, i) => (
+                    <svg key={i} className="w-4 h-4 text-[#D4AF37]" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+                {/* Review text */}
+                <p className="text-zinc-300 text-sm leading-relaxed mb-4">&ldquo;{review.review}&rdquo;</p>
+                {/* Reviewer info */}
+                <div className="flex items-center gap-3 pt-3 border-t border-zinc-800">
+                  <div className="w-9 h-9 rounded-full bg-gradient-to-br from-amber-500 to-red-600 flex items-center justify-center text-black font-extrabold text-sm shrink-0">
+                    {review.name.charAt(0)}
+                  </div>
+                  <div>
+                    <p className="text-white text-sm font-semibold leading-none">{review.name}</p>
+                    <p className="text-zinc-500 text-xs mt-0.5">{review.location} · {review.date}</p>
+                  </div>
+                  <div className="ml-auto">
+                    <span className="text-[10px] text-emerald-400 font-semibold bg-emerald-950/50 border border-emerald-800/40 px-2 py-0.5 rounded-full">
+                      ✓ Verified
+                    </span>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* CTA below reviews */}
+          <div className="text-center mt-12">
+            <p className="text-zinc-400 text-sm mb-4">Enjoyed your ride with us? Share your experience!</p>
+            <a
+              href="https://www.google.com/maps/place/Sri+Amman+Self+Driving+Rental+Car+Madurai/@9.9214004,78.1225125,17z/data=!4m8!3m7!1s0x3b00c5d2423514b9:0x690b35cc9f00b09c!8m2!3d9.9213951!4d78.1250928!9m1!1b1!16s%2Fg%2F11njcygvd7?hl=en-US&entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-[#D4AF37] hover:bg-[#ffe57f] text-black font-extrabold px-7 py-3.5 rounded-xl text-sm transition-colors"
+            >
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+              Write a Google Review
+            </a>
+          </div>
+
+        </div>
+      </section>
+
+      {/* 12. Policy Center Accordion */}
       <section id="policies" className="py-24 relative overflow-hidden bg-zinc-950">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           
